@@ -31,6 +31,7 @@ class GatewayTest extends GatewayTestCase
 
     public function testCompletePurchaseSuccess()
     {
+        $this->getHttpRequest()->setMethod('POST');
         $this->getHttpRequest()->request->replace(
             array(
                 'callbackPW' => 'bar123',
@@ -53,6 +54,7 @@ class GatewayTest extends GatewayTestCase
      */
     public function testCompletePurchaseInvalidCallbackPassword()
     {
+        $this->getHttpRequest()->setMethod('POST');
         $this->getHttpRequest()->request->replace(
             array(
                 'callbackPW' => 'fake',
@@ -64,6 +66,7 @@ class GatewayTest extends GatewayTestCase
 
     public function testCompletePurchaseError()
     {
+        $this->getHttpRequest()->setMethod('POST');
         $this->getHttpRequest()->request->replace(
             array(
                 'callbackPW' => 'bar123',
